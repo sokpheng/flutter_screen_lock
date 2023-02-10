@@ -37,6 +37,15 @@ class KeyPad extends StatelessWidget {
       child: deleteButton ?? const Icon(Icons.backspace),
     );
   }
+  
+  Widget _buildDeleteButtonDisabled() {
+    return KeyPadButton.transparent(
+      onPressed: () {},
+      onLongPress: () {},
+      config: actionButtonConfig,
+      child: deleteButton ?? const Icon(Icons.backspace),
+    );
+  }
 
   Widget _buildCancelButton() {
     if (didCancelled == null) {
@@ -66,7 +75,7 @@ class KeyPad extends StatelessWidget {
       valueListenable: inputState.currentInput,
       builder: (context, value, child) {
         if (!enabled || value.isEmpty) {
-          return _buildCancelButton();
+          return _buildDeleteButtonDisabled();
         } else {
           return _buildDeleteButton();
         }
