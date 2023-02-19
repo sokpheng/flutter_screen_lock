@@ -281,7 +281,7 @@ class _ScreenLockState extends State<ScreenLock> {
       return Column(
         children: [
           const SizedBox(
-            height: 90,
+            height: 60,
           ),
           const Icon(
             Icons.timer_outlined,
@@ -292,8 +292,6 @@ class _ScreenLockState extends State<ScreenLock> {
           Text(
             'Input locked for ${(duration.inMilliseconds / 1000).ceil()} seconds.',
           ),
-          const SizedBox(height: 25),
-          const Text(''),
         ],
       );
     }
