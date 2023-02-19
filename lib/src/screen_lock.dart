@@ -278,8 +278,22 @@ class _ScreenLockState extends State<ScreenLock> {
     if (widget.delayBuilder != null) {
       return widget.delayBuilder!(context, duration);
     } else {
-      return Text(
-        'Input locked for ${(duration.inMilliseconds / 1000).ceil()} seconds.',
+      return Column(
+        children: [
+          const SizedBox(
+            height: 105,
+          ),
+          const Icon(
+            Icons.timer_outlined,
+            color: Colors.white,
+            size: 40,
+          ),
+          const SizedBox(height: 25),
+          Text(
+            'Input locked for ${(duration.inMilliseconds / 1000).ceil()} seconds.',
+          ),
+          const SizedBox(height: 25),
+        ],
       );
     }
   }
