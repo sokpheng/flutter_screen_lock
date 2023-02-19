@@ -292,6 +292,8 @@ class _ScreenLockState extends State<ScreenLock> {
           Text(
             'Input locked for ${(duration.inMilliseconds / 1000).ceil()} seconds.',
           ),
+          const SizedBox(height: 25),
+          const Text(''),
         ],
       );
     }
